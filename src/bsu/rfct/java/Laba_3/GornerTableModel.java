@@ -29,20 +29,18 @@ public class GornerTableModel extends AbstractTableModel {
         return step;
     }
     public int getColumnCount() {
-// В данной модели два столбца
+
         return 3;
     }
     public int getRowCount() {
-// Вычислить количество точек между началом и концом отрезка
-// исходя из шага табулирования
+
         return new Double(Math.ceil((to-from)/step)).intValue()+1;
     }
 
     public Object getValueAt(int row, int col) {
-// Вычислить значение X как НАЧАЛО_ОТРЕЗКА + ШАГ*НОМЕР_СТРОКИ
+
         double x = from + step * row;
         if (col == 0) {
-// Если запрашивается значение 1-го столбца, то это X
             return x;
         } else {
         }
@@ -64,7 +62,6 @@ public class GornerTableModel extends AbstractTableModel {
         }
     }
 
-
     public String getColumnName(int col) {
         switch (col) {
             case 0:
@@ -81,4 +78,3 @@ public class GornerTableModel extends AbstractTableModel {
         else return Boolean.class;
     }
 }
-
